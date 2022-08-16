@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.btn-lg:hover  {
+    color: black;
+    background-color: #fff200;
+    border:2px solid #fff200;
+
+}
+
+.btn-lg {
+    border:3px solid #fff200;
+    border-radius: 50px;
+    width: 8rem;
+}
