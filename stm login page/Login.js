@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ContentPaper from '../../components/layouts/rfs/Content';
 import { loginRequest } from '../../utils/authConfig';
 import { useMsal, useIsAuthenticated } from '@azure/msal-react';
-import { Card, Image, Text, Badge, Button, Group, SimpleGrid, Grid, Center} from '@mantine/core';
+import { Image, Text, Button, Grid, } from '@mantine/core';
 import abilogo from '../../images/abilogo.png';
 import { AuthContext } from '../../contexts/AuthContext';
 
@@ -69,45 +69,49 @@ const Login = () => {
 
  
   <Grid align="flex-start">
-    <Grid.Col span={6} style={{ minHeight: 900, backgroundColor:'black' }}>
-      <div style={{   height:'100%', marginTop: '12rem',marginBottom: '2rem'}}>
+    <Grid.Col span={6} style={{ minHeight: '100vh', backgroundColor:'black' }}>
         <Image
-          style={{ display:"flex", justifyContent:'right', paddingLeft:'7rem', paddingRight:'5rem',  marginBottom:'5px'}}
+          style={{ display:"flex", marginTop: '35vh',marginBottom: '3vh', justifyContent:'right', paddingLeft:'5vw', paddingRight:'4vw',  marginBottom:'0.5vh', height:'100%', width:'100%', objectFit: 'fill'}}
           src={abilogo}
-          className='h6'
           alt='AB InBev Logo'
-          height={100}
         />
-        <Text color="yellow" style={{fontSize:'30px',display:"flex", justifyContent:'right',paddingLeft:'10rem', paddingRight:'7rem',}}> To a future with more Cheers
-        </Text>
-      </div>
     </Grid.Col>
-    <Grid.Col span={6} style={{minHeight: 900 }}>
-    <div style={{marginTop: '10rem'}}>
-      <Text style={{fontSize:'74px', fontWeight:'700', paddingTop:'1.8rem', paddingLeft:'5rem', paddingRight:'5rem', display:"inline-flex", justifyContent:'left'}} >Speed to Market</Text>
-      <Text  style={{paddingRight:'3rem', paddingTop:'2rem', fontSize:'40px', fontWeight:'500'}}>
-        <Center> Welcome</Center>
-      </Text>
-      <Text size='lg' style={{paddingRight:'3rem',paddingTop:'2rem'}}>
-        <Center>Please use your official AB InBev ID to login</Center>
-      </Text>
+    <Grid.Col span={6} style={{minHeight: '100vh' }}>
+    <div style={{marginTop: '30vh', width:'100%'}}>
+      <Text style={{fontSize:'7vh', fontWeight:'700', paddingTop:'3vh', display:"inline-flex", justifyContent:'center', width:'100%'}} >Speed to Market</Text>
+      <Text  style={{ paddingTop:'3vh', fontSize:'4vh', fontWeight:'500', display:"inline-flex", justifyContent:'center', width:'100%'}}><b>Welcome</b></Text>
+      <Text size='lg' style={{display:"inline-flex", fontSize:'2vh',justifyContent:'center', width:'100%',paddingTop:'3vh'}}><b>Please use your official AB InBev ID to login</b></Text>
     </div>
-    <div style={{display:"flex", justifyContent:'space-between',marginTop: '2.5rem', paddingLeft:'13rem', paddingRight:'16.8rem',}}>
+    <div style={{display:"flex", justifyContent:'space-between'}}>
       <Button
-        style={{ marginLeft: '20px' }}
-        size='lg'
+        style={{ marginLeft: '10vw' ,marginTop: '4vh', justifyContent:'left', width:'30vh', height:'9vh'}}
         color='yellow'
         variant='filled'
-        onClick={() => navigate('/register')}
+        onClick={() => handleLogin()}
+        styles={{
+          root:{
+            fontSize:'4.00vh',
+            paddingLeft:'0',
+            paddingRight:'0',
+            paddingTop:'0',
+            paddingBottom:'0',
+          },}}
         >
         Register
       </Button>
       
       <Button
-        size='lg'
+      style={{ marginRight: '10vw',marginTop: '4vh', justifyContent:'right', width:'30vh', height:'9vh'}}
         color='yellow'
         variant='filled'
         onClick={() => handleLogin()}
+        styles={{root:{
+          fontSize:'4.00vh',
+          paddingLeft:'0',
+          paddingRight:'0',
+          paddingTop:'0',
+          paddingBottom:'0',
+        }}}
         >
         Login
       </Button>
